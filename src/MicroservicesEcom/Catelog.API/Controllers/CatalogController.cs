@@ -19,7 +19,7 @@ namespace Catelog.API.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
+        //[ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
         [ResponseCache(Duration = 60)]
         public IActionResult GetProducts()
         {
@@ -34,15 +34,28 @@ namespace Catelog.API.Controllers
             }
         }
 
+        [HttpGet]
+        [ResponseCache(Duration = 20)]
+        public IActionResult GetByCategory(string category)
+        {
+            try
+            {
+                var products = _productManager.GetByCategory(category);
+                return CustomResult(products);
+            }
+            catch (Exception ex)
+            {
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+            }
+        }
 
         [HttpGet]
-        [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         public IActionResult GetProductById(string id)
         {
             try
             {
                 var product = _productManager.GetById(id);
-                return CustomResult("Product found",product, HttpStatusCode.OK);
+                return CustomResult("Product found", product, HttpStatusCode.OK);
             }
             catch (Exception ex)
             {
