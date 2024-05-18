@@ -18,11 +18,19 @@ namespace Catelog.API.Controllers
         }
 
         [HttpGet]
-        //[ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
+        [ResponseCache(Duration = 60)]
         public IActionResult GetProducts()
         {
-            var products = _productManager.GetAll();
-            return CustomResult(products);
+            try
+            {
+                var products = _productManager.GetAll();
+                return CustomResult(products);
+            }
+            catch (Exception ex)
+            {
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+            }
         }
     }
 }
