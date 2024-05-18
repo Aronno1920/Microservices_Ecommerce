@@ -35,6 +35,22 @@ namespace Catelog.API.Controllers
         }
 
 
+        [HttpGet]
+        [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
+        public IActionResult GetProductById(string id)
+        {
+            try
+            {
+                var product = _productManager.GetById(id);
+                return CustomResult("Product found",product, HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+            }
+        }
+
+
         [HttpPost]
         public IActionResult CreateProduct([FromBody] Product product)
         {
