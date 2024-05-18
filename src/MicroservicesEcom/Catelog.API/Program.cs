@@ -1,4 +1,6 @@
 using Catelog.API.HostingService;
+using Catelog.API.Interfaces.Manager;
+using Catelog.API.Manager;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHostedService<AppHostedService>();
+
+//Controller depencyes
+builder.Services.AddScoped<IProductManager, ProductManager>();
 
 var app = builder.Build();
 
