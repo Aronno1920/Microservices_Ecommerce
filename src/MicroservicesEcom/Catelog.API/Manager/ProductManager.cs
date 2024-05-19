@@ -10,6 +10,7 @@ namespace Catelog.API.Manager
     {
         public ProductManager() : base(new ProductRepository())
         {
+
         }
 
         public List<Product> GetByCategory(string category)
