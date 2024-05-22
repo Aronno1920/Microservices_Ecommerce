@@ -17,7 +17,7 @@ namespace Discount.API.Repository
         {
             var connection = new NpgsqlConnection(_configuration.GetConnectionString("DiscountDb"));
 
-            var affedRow = await connection.ExecuteAsync("INSERT INTO Coupon(productId,productName,description,amount) VALUES (@ProductId, @ProductName, @Description, @Amount)", new { ProductId = coupon.Id, ProductName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount });
+            var affedRow = await connection.ExecuteAsync("INSERT INTO Coupon(productId,productName,description,amount) VALUES (@ProductId, @ProductName, @Description, @Amount)", new { ProductId = coupon.ProductId, ProductName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount });
             if (affedRow > 0)
             {
                 return true;
@@ -47,7 +47,7 @@ namespace Discount.API.Repository
         {
             var connection = new NpgsqlConnection(_configuration.GetConnectionString("DiscountDb"));
 
-            var coupon = await connection.QueryFirstAsync<Coupon>("SELECT * FROM Coupon WHERE productId=@ProductId", new { ProductId = productId });
+            var coupon = await connection.QueryFirstOrDefaultAsync<Coupon>("SELECT * FROM Coupon WHERE productId=@ProductId", new { ProductId = productId });
             if (coupon == null)
             {
                 return new Coupon() { Amount = 0, ProductName = "No Discount" };
@@ -62,7 +62,7 @@ namespace Discount.API.Repository
         {
             var connection = new NpgsqlConnection(_configuration.GetConnectionString("DiscountDb"));
 
-            var affedRow = await connection.ExecuteAsync("UPDATE Coupon SET productId=@ProductId,productName=@ProductName,description=@Description,amount=@Amount", new { ProductId = coupon.Id, ProductName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount });
+            var affedRow = await connection.ExecuteAsync("UPDATE Coupon SET productId=@ProductId,productName=@ProductName,description=@Description,amount=@Amount", new { ProductId = coupon.ProductId, ProductName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount });
             if (affedRow > 0)
             {
                 return true;
