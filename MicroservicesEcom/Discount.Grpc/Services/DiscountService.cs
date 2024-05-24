@@ -6,84 +6,76 @@ using Grpc.Core;
 
 namespace Discount.Grpc.Services
 {
-    public class DiscountService: DiscountProtoService.DiscountProtoServiceBase
+    public class DiscountService:DiscountProtoService.DiscountProtoServiceBase
     {
         ICouponRepository _couponRepository;
         ILogger<DiscountService> _logger;
         IMapper _mapper;
-
-        public DiscountService(ICouponRepository couponRepository, ILogger<DiscountService> logger, IMapper mapper)
-        {
-            _couponRepository = couponRepository;
-            _logger = logger;
-            _mapper = mapper;
+        public DiscountService(ICouponRepository couponRepositroy,ILogger<DiscountService> logger,IMapper mapper) 
+        { 
+            _couponRepository= couponRepositroy;
+            _logger= logger;
+            _mapper= mapper;
         }
 
         public override async Task<CouponRequest> GetDiscount(GetDiscountRequest request, ServerCallContext context)
         {
             var coupon = await _couponRepository.GetDiscount(request.ProductId);
-
-            if (coupon == null)
+            if(coupon==null)
             {
-                throw new RpcException(new Status(StatusCode.NotFound, "No discount found for the prodect"));
+                throw new RpcException(new Status(StatusCode.NotFound, "Discount not found."));
             }
-            _logger.LogInformation("Discount is retived for {productName} with amount {amount}",coupon.ProductName,coupon.Amount);
-
-            //return new CouponRequest { ProductId = coupon.ProductId, ProductName=coupon.ProductName, Description=coupon.Description,Amount=coupon.Amount};
-
+            _logger.LogInformation("Discount is retrived for ProductName :{productName},Amount : {amount}",coupon.ProductName,coupon.Amount);
+            //return new CouponRequest { ProductId = coupon.ProductId, ProductName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount };
             return _mapper.Map<CouponRequest>(coupon);
         }
 
         public override async Task<CouponRequest> CreateDiscount(CouponRequest request, ServerCallContext context)
         {
             var coupon = _mapper.Map<Coupon>(request);
-            bool isCreated= await _couponRepository.CreateDiscount(coupon);
-            
-            if (isCreated)
+            bool isSaved = await _couponRepository.CreateDiscount(coupon);
+            if(isSaved)
             {
-                _logger.LogInformation("Discount is created for {ProductName}", coupon.ProductName);
+                _logger.LogInformation("Discount is successfully created. ProductName :{ProductName}", coupon.ProductName);
             }
             else
             {
-                _logger.LogInformation("Discount is create failed for {ProductName}", coupon.ProductName);
+                _logger.LogInformation("Discount created failed.");
             }
-
+            
             return _mapper.Map<CouponRequest>(coupon);
         }
 
         public override async Task<CouponRequest> UpdateDiscount(CouponRequest request, ServerCallContext context)
         {
-            var coupon = _mapper.Map<Coupon>(request);
-            bool isModified = await _couponRepository.UpdateDiscount(coupon);
-
-            if (isModified)
+            var coupon= _mapper.Map<Coupon>(request);
+            bool IsModified=await _couponRepository.UpdateDiscount(coupon);
+            if(IsModified)
             {
-                _logger.LogInformation("Discount is modified for {ProductName}", coupon.ProductName);
+                _logger.LogInformation("Discount is successfully updated. ProductName : {ProductName}", coupon.ProductName);
             }
             else
             {
-                _logger.LogInformation("Discount is modify failed for {ProductName}", coupon.ProductName);
-            }
-
+                _logger.LogInformation("Discount update failed.");
+            }            
             return _mapper.Map<CouponRequest>(coupon);
         }
 
         public override async Task<DeleteDiscountResponse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
         {
-            var isDeleted = await _couponRepository.DeleteDiscount(request.ProductId);
-            if (isDeleted)
+            bool isDeleted = await _couponRepository.DeleteDiscount(request.ProductId);
+            if(isDeleted)
             {
-                _logger.LogInformation("Discount is deleted");
+                _logger.LogInformation("Discount has been deleted. ProductName :{ProductId}", request.ProductId);
+
             }
             else
             {
-                _logger.LogInformation("Discount is delete failed");
+                _logger.LogInformation("Discount deleted failed.");
             }
+            return new DeleteDiscountResponse() { Success = isDeleted };
 
-            return new DeleteDiscountResponse()
-            {
-                Success = isDeleted
-            };
         }
+
     }
 }

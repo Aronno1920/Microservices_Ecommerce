@@ -2,25 +2,23 @@
 {
     public class ShoppingCart
     {
-        public ShoppingCart() { }
-        public ShoppingCart(String userName)
+        public ShoppingCart(string userName)
         {
-            this.UserName = userName;
+            UserName = userName;
         }
-
-        public String UserName { get; set; }
+        public ShoppingCart() 
+        {
+        }
+        public string UserName { get; set; }
         public List<ShoppingCartItem> Items { get; set; }=new List<ShoppingCartItem>();
-        public decimal TotalPrice
-        {
-            get
+        public decimal TotalPrice { get
             {
-                decimal total = 0;
-                foreach (ShoppingCartItem item in Items)
+                decimal totalPrice = 0;
+                foreach (var item in Items)
                 {
-                    total += item.Price;
+                    totalPrice += item.Price;
                 }
-                return total;
-            }
-        }
+                return totalPrice;
+            } }
     }
 }
