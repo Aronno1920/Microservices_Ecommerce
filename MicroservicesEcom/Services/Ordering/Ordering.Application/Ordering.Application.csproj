@@ -11,10 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contacts\Infrastructure\" />
-    <Folder Include="Contacts\Persistence\" />
     <Folder Include="Features\" />
     <Folder Include="Behaviours\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EF.Core.Repository" Version="1.0.0.2" />
   </ItemGroup>
 
 </Project>
