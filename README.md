@@ -7,7 +7,9 @@
 <br /><br />
 This is a microservice application built using .NET 7, various technologies and frameworks commonly used in microservices architecture. The application includes microservices for Product, Basket, Discount and Ordering modules, which are essential for building e-commerce applications.
 
-![screenshot] (https://github.com/Aronno1920/Microservices_Ecommerce/blob/main/Documents/MainPicture.png)
+<p align="center">
+  <img src="Documents/MainPicture.png" width="350" title="hover text">
+</p>
 
 # Implementation
 The microservice application is built using a combination of NoSQL and relational databases. MongoDB and Redis are used for storing unstructured data and caching, while PostgreSQL and SqlServer are used for storing structured data.
