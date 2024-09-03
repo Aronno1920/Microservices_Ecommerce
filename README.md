@@ -26,6 +26,7 @@ The application is built using the principles of Clean Architecture, which empha
 - Internet Information Service (IIS)
 - Postman
 
+<br /><br />
 # Development
 ### Catalog.API with MongoDB
 - Packages
@@ -36,7 +37,7 @@ The application is built using the principles of Clean Architecture, which empha
 	- 
 
 
-
+<br /><br />
 # Conclusion
 This microservice application demonstrates the use of various .NET technologies and frameworks commonly used in microservices architecture. It provides a practical and hands-on approach to learning microservices architecture, which is essential for developers who want to implement microservices in their own projects.
 
