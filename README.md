@@ -27,7 +27,7 @@ The application is built using the principles of Clean Architecture, which empha
 - Postman
 
 # Development
-## Catalog.API with MongoDB
+### Catalog.API with MongoDB
 - Packages
 	- CoreApiResponse - Custom Return
 	- MongoRepo - MongoDB database with repository
