@@ -7,7 +7,7 @@
 <br /><br />
 This is a microservice application built using .NET 7, various technologies and frameworks commonly used in microservices architecture. The application includes microservices for Product, Basket, Discount and Ordering modules, which are essential for building e-commerce applications.
 
-# `#0969DA` Implementation
+# Implementation
 The microservice application is built using a combination of NoSQL and relational databases. MongoDB and Redis are used for storing unstructured data and caching, while PostgreSQL and SqlServer are used for storing structured data.
 
 Communication between microservices is implemented using RabbitMQ for event-driven communication. The Ocelot API Gateway is used to route requests to the appropriate microservices.
