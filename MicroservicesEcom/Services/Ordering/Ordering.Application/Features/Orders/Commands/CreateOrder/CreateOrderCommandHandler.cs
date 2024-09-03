@@ -23,6 +23,7 @@ namespace Ordering.Application.Features.Orders.Commands.CreateOrder
         {
             var order = _mapper.Map<Order>(request);
             bool isOrderPlaced= await _orderRepository.AddAsync(order);
+            
             if (isOrderPlaced) {
                await _emailService.SendEmailAsync();
                 return true;
