@@ -58,10 +58,13 @@ The application is built using the principles of Clean Architecture, which empha
 
 - gRPC (Google Remote Procedure Call) basics: 
 	- Proto File/Protobuf (Proto buffer) - Language neutral format for specifying the messages send and received by gRPC services.
-	- Service
-	- Protobuf Message
+	- Service - Protocol buffer compiler will geneate service interface code ans stubs
+	- Protobuf Message - Messages are the main data transfer object in profobuf.
 	- Naming Conventions
-
+		- Files should be named lower_snake_case.photo
+		- Use CamelCase (with a initial capital) for message and service names, ex: DiscountRequest, CreateDiscount
+		- Use underscore_separated_names for field names, ex: product_name, discount_rate
+		- The "= 1", "= 2" markers on each element indentify the unique "tag" the field uses in the binary encoding
 
 
 <br /><br />
