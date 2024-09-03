@@ -32,20 +32,21 @@ The application is built using the principles of Clean Architecture, which empha
 ### Catalog.API with MongoDB
 - Assign Port for localhost: 5001
 - Packages
-	- CoreApiResponse - Custom Return Type
+	- CoreApiResponse - Custom return type
 	- MongoRepo - MongoDB database with repository
 
 ### Basket.API with Radis
 - Assign Port for localhost: 5002
 - Packages
-	- CoreApiResponse - Custom Return Type
+	- CoreApiResponse - Custom return type
 	- Microsoft.Extensions.Caching.StackExchangeRedis - Redis database
 
 ### Discount.API with PostgreSQL
 - Assign Port for localhost: 5003
 - Packages
-	- CoreApiResponse - Custom Return Type
-	- Microsoft.Extensions.Caching.StackExchangeRedis - Redis database
+	- CoreApiResponse - Custom return type
+	- Npgsql - PostgreSQL database
+	- Dapper - ORM (Object Relational Mapping) for database related action
 
 
 <br /><br />
@@ -53,5 +54,4 @@ The application is built using the principles of Clean Architecture, which empha
 This microservice application demonstrates the use of various .NET technologies and frameworks commonly used in microservices architecture. It provides a practical and hands-on approach to learning microservices architecture, which is essential for developers who want to implement microservices in their own projects.
 
 # Credited
-Programming Palli
-https://www.youtube.com/watch?v=G-zu-loz4qI&list=PLqCbg_KAOnCfGhU8iK-a-jyuQfvM-i1w7&index=1
+<a href="https://www.youtube.com/watch?v=G-zu-loz4qI&list=PLqCbg_KAOnCfGhU8iK-a-jyuQfvM-i1w7&index=1">Programming Palli</a>
