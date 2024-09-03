@@ -48,10 +48,18 @@ The application is built using the principles of Clean Architecture, which empha
 	- Npgsql - PostgreSQL database
 	- Dapper - ORM (Object Relational Mapping) for database related action
 
+### Discount.Grpc with PostgreSQL
+- Packages
+	- Grpc.AspNetCore - Grpc services
+	- Npgsql - PostgreSQL database
+	- Dapper - ORM (Object Relational Mapping) for database related action
+	- AutoMapper.Extensions.Microsoft.DependencyInjection - AutoMapper by dependency injection
+
+
 
 <br /><br />
 # Conclusion
 This microservice application demonstrates the use of various .NET technologies and frameworks commonly used in microservices architecture. It provides a practical and hands-on approach to learning microservices architecture, which is essential for developers who want to implement microservices in their own projects.
 
 # Credited
-<a href="https://www.youtube.com/watch?v=G-zu-loz4qI&list=PLqCbg_KAOnCfGhU8iK-a-jyuQfvM-i1w7&index=1">Programming Palli</a>
+<a href="https://www.youtube.com/watch?v=G-zu-loz4qI&list=PLqCbg_KAOnCfGhU8iK-a-jyuQfvM-i1w7&index=1" target="_blank">Programming Palli</a>
