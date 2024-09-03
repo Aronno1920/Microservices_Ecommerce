@@ -55,7 +55,6 @@ The application is built using the principles of Clean Architecture, which empha
 	- Npgsql - PostgreSQL database
 	- Dapper - ORM (Object Relational Mapping) for database related action
 	- AutoMapper.Extensions.Microsoft.DependencyInjection - AutoMapper by dependency injection
-
 - gRPC (Google Remote Procedure Call) basics: 
 	- Proto File/Protobuf (Proto buffer) - Language neutral format for specifying the messages send and received by gRPC services.
 	- Service - Protocol buffer compiler will geneate service interface code ans stubs
@@ -65,6 +64,12 @@ The application is built using the principles of Clean Architecture, which empha
 		- Use CamelCase (with a initial capital) for message and service names, ex: DiscountRequest, CreateDiscount
 		- Use underscore_separated_names for field names, ex: product_name, discount_rate
 		- The "= 1", "= 2" markers on each element indentify the unique "tag" the field uses in the binary encoding
+
+		
+
+
+
+
 
 
 <br /><br />
