@@ -64,6 +64,10 @@ The application is built using the principles of Clean Architecture, which empha
 		- Use CamelCase (with a initial capital) for message and service names, ex: DiscountRequest, CreateDiscount
 		- Use underscore_separated_names for field names, ex: product_name, discount_rate
 		- The "= 1", "= 2" markers on each element indentify the unique "tag" the field uses in the binary encoding
+	- Proto file propeties
+		- Build Action: Protobuf compiler
+		- gRPC Stub Classes: Server only
+
 
 		
 
