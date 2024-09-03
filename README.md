@@ -7,7 +7,7 @@
 <br /><br />
 This is a microservice application built using .NET 7, various technologies and frameworks commonly used in microservices architecture. The application includes microservices for Product, Basket, Discount and Ordering modules, which are essential for building e-commerce applications.
 
-# Implementation
+# `#0969DA` Implementation
 The microservice application is built using a combination of NoSQL and relational databases. MongoDB and Redis are used for storing unstructured data and caching, while PostgreSQL and SqlServer are used for storing structured data.
 
 Communication between microservices is implemented using RabbitMQ for event-driven communication. The Ocelot API Gateway is used to route requests to the appropriate microservices.
@@ -26,9 +26,14 @@ The application is built using the principles of Clean Architecture, which empha
 - Internet Information Service (IIS)
 - Postman
 
+# Development
+### Catalog.API
+
+
 
 # Conclusion
 This microservice application demonstrates the use of various .NET technologies and frameworks commonly used in microservices architecture. It provides a practical and hands-on approach to learning microservices architecture, which is essential for developers who want to implement microservices in their own projects.
 
 # Credited
+Programming Palli
 https://www.youtube.com/watch?v=G-zu-loz4qI&list=PLqCbg_KAOnCfGhU8iK-a-jyuQfvM-i1w7&index=1
