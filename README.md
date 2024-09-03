@@ -14,5 +14,21 @@ Communication between microservices is implemented using RabbitMQ for event-driv
 
 The application is built using the principles of Clean Architecture, which emphasizes the separation of concerns in software design. This makes it easy to maintain and modify the application over time.
 
+# Prerequisites
+- Basic knowledge of C#, Asp.Net MVC and REST API
+- OOP Concept
+- Internet Information Service (IIS)
+- Github
+
+# Tootls
+- .NET7 or above SDK
+- Visual Studio 2022
+- Internet Information Service (IIS)
+- Postman
+
+
 # Conclusion
 This microservice application demonstrates the use of various .NET technologies and frameworks commonly used in microservices architecture. It provides a practical and hands-on approach to learning microservices architecture, which is essential for developers who want to implement microservices in their own projects.
+
+# Credited
+https://www.youtube.com/watch?v=G-zu-loz4qI&list=PLqCbg_KAOnCfGhU8iK-a-jyuQfvM-i1w7&index=1
