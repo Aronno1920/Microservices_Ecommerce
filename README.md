@@ -5,11 +5,10 @@
   <img src="https://badges.pufler.dev/created/Aronno1920/Microservices_Ecommerce" alt="Gists Badge">
 </div>
 <br /><br />
-This is a microservice application built using .NET 7, various technologies and frameworks commonly used in microservices architecture. The application includes microservices for Product, Basket, Discount and Ordering modules, which are essential for building e-commerce applications.
-
-<p align="center">
+<div align="center">
   <img src="Documents/MainPicture.png" title="eCommerce Application using Microservice Architecture">
-</p>
+</div>
+This is a microservice application built using .NET 7, various technologies and frameworks commonly used in microservices architecture. The application includes microservices for Product, Basket, Discount and Ordering modules, which are essential for building e-commerce applications.
 
 # Implementation
 The microservice application is built using a combination of NoSQL and relational databases. MongoDB and Redis are used for storing unstructured data and caching, while PostgreSQL and SqlServer are used for storing structured data.
