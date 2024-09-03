@@ -28,13 +28,24 @@ The application is built using the principles of Clean Architecture, which empha
 
 <br /><br />
 # Development
+
 ### Catalog.API with MongoDB
+- Assign Port for localhost: 5001
 - Packages
-	- CoreApiResponse - Custom Return
+	- CoreApiResponse - Custom Return Type
 	- MongoRepo - MongoDB database with repository
+
 ### Basket.API with Radis
+- Assign Port for localhost: 5002
 - Packages
-	- 
+	- CoreApiResponse - Custom Return Type
+	- Microsoft.Extensions.Caching.StackExchangeRedis - Redis database
+
+### Discount.API with PostgreSQL
+- Assign Port for localhost: 5003
+- Packages
+	- CoreApiResponse - Custom Return Type
+	- Microsoft.Extensions.Caching.StackExchangeRedis - Redis database
 
 
 <br /><br />
