@@ -49,11 +49,18 @@ The application is built using the principles of Clean Architecture, which empha
 	- Dapper - ORM (Object Relational Mapping) for database related action
 
 ### Discount.Grpc with PostgreSQL
+- Assign Port for localhost: 5004
 - Packages
 	- Grpc.AspNetCore - Grpc services
 	- Npgsql - PostgreSQL database
 	- Dapper - ORM (Object Relational Mapping) for database related action
 	- AutoMapper.Extensions.Microsoft.DependencyInjection - AutoMapper by dependency injection
+
+- gRPC (Google Remote Procedure Call) basics: 
+	- Proto File/Protobuf (Proto buffer) - Language neutral format for specifying the messages send and received by gRPC services.
+	- Service
+	- Protobuf Message
+	- Naming Conventions
 
 
 
