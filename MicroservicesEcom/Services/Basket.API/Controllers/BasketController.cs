@@ -17,6 +17,7 @@ namespace Basket.API.Controllers
         DiscountGrpcService _discountGrpcService;
         private readonly IPublishEndpoint _publishEndpoint;
         IMapper _mapper;
+
         public BasketController(IBasketRepository basketRepository,DiscountGrpcService discountGrpcService,IPublishEndpoint publishEndpoint,IMapper mapper) 
         { 
             _basketRepository = basketRepository;
@@ -44,8 +45,9 @@ namespace Basket.API.Controllers
         public async Task<IActionResult> UpdateBasket([FromBody]ShoppingCart basket)
         {
             try
-            {   //TODO: Communicate discount.grpc
-                //calculate latest price
+            {   //TO-DOs:
+                //Communicate discount.grpc
+                //Calculate latest price
                 //Create discount grpc service
                 foreach(var item in basket.Items)
                 {
